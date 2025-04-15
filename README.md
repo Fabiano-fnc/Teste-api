@@ -52,7 +52,6 @@ API REST feita com **FastAPI**, **PostgreSQL** e **Alembic**, com suporte a migr
   - **Acesse: http://localhost:8000**
   - **Docs: http://localhost:8000/docs**
 
-## 🗂 Estrutura de Pastas
 
 ## 🗂 Estrutura de Pastas
 
