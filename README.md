@@ -47,7 +47,7 @@ API REST feita com **FastAPI**, **PostgreSQL** e **Alembic**, com suporte a migr
 
 ## 🧪 Rodando a API
 
-  -uvicorn app.main:app --reload
+  python -m uvicorn app.main:app --reload
 
   - **Acesse: http://localhost:8000**
   - **Docs: http://localhost:8000/docs**
