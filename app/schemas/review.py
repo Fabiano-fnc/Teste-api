@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from uuid import UUID
 from .usuario import Usuario
 from .filme import Filme
@@ -15,5 +15,7 @@ class Review(ReviewBase):
     usuario: Usuario
     filme: Filme
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(
+        from_attributes=True,  # substitui orm_mode
+        arbitrary_types_allowed=True
+    )

@@ -9,7 +9,7 @@ router = APIRouter()
 
 @router.post("/reviews/", response_model=Review)
 def criar_review(review: ReviewCreate, db: Session = Depends(get_db)):
-    db_review = ReviewModel(**review.dict())
+    db_review = ReviewModel(**review.model_dump())
     db.add(db_review)
     db.commit()
 
