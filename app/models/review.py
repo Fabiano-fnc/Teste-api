@@ -10,6 +10,5 @@ class Review(Base):
     id_filme = Column(Integer, ForeignKey("filme.id"), primary_key=True)
     estrelas = Column(Integer, nullable=False)
     
-    # Relações
     usuario = relationship("Usuario", back_populates="reviews")
     filme = relationship("Filme", back_populates="reviews")

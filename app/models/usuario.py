@@ -9,5 +9,4 @@ class Usuario(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, server_default="gen_random_uuid()")
     nome = Column(String(100), nullable=False, unique=True)
     
-    # Adicione esta relação
     reviews = relationship("Review", back_populates="usuario")

@@ -4,7 +4,7 @@ from .usuario import Usuario
 from .filme import Filme
 
 class ReviewBase(BaseModel):
-    id_usuario: UUID  # CORRIGIDO de str → UUID
+    id_usuario: UUID  
     id_filme: int
     estrelas: int = Field(ge=0, le=5)
 
@@ -16,6 +16,6 @@ class Review(ReviewBase):
     filme: Filme
 
     model_config = ConfigDict(
-        from_attributes=True,  # substitui orm_mode
+        from_attributes=True,  
         arbitrary_types_allowed=True
     )

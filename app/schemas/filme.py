@@ -6,14 +6,14 @@ class GeneroFilme(str, Enum):
     HUMOR = "HUMOR"
     TERROR = "TERROR"
 
-class FilmeCreate(BaseModel):  # Schema para criação (SEM ID)
+class FilmeCreate(BaseModel):  
     titulo: str
     genero: GeneroFilme
 
-class Filme(FilmeCreate):  # Schema para resposta (COM ID)
+class Filme(FilmeCreate):  
     id: int
 
     model_config = ConfigDict(
-        from_attributes=True,  # substitui orm_mode
+        from_attributes=True, 
         arbitrary_types_allowed=True
     )
