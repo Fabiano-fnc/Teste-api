@@ -52,6 +52,32 @@ API REST feita com **FastAPI**, **PostgreSQL** e **Alembic**, com suporte a migr
   - **Acesse: http://localhost:8000**
   - **Docs: http://localhost:8000/docs**
 
+## 🧪 Testes
+
+Para executar os testes automatizados da API:
+
+# Ative o ambiente virtual (se aplicável)
+source .venv/bin/activate  # Linux/Mac
+# ou 
+.\.venv\Scripts\activate   # Windows
+
+# Instale as dependências de testes (caso não tenha feito)
+pip install pytest
+
+# Execute todos os testes
+pytest
+
+- Saída espeerada:
+
+=========================== test session starts ============================
+platform linux -- Python 3.12.3, pytest-8.3.5, pluggy-1.5.0
+collected 5 items
+
+tests/test_endpoints.py ....                                          [80%]
+tests/test_main.py .                                                  [100%]
+
+============================ 5 passed in 0.40s ============================
+
 
 ## 🗂 Estrutura de Pastas
 
