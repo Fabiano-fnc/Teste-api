@@ -8,7 +8,7 @@ router = APIRouter()
 
 @router.post("/filmes/", response_model=Filme)
 def criar_filme(filme: FilmeCreate, db: Session = Depends(get_db)):  # Recebe FilmeCreate
-    db_filme = FilmeModel(**filme.dict())
+    db_filme = FilmeModel(**filme.model_dump())
     db.add(db_filme)
     db.commit()
     db.refresh(db_filme)

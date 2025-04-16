@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from enum import Enum
 
 class GeneroFilme(str, Enum):
@@ -13,5 +13,7 @@ class FilmeCreate(BaseModel):  # Schema para criação (SEM ID)
 class Filme(FilmeCreate):  # Schema para resposta (COM ID)
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(
+        from_attributes=True,  # substitui orm_mode
+        arbitrary_types_allowed=True
+    )
